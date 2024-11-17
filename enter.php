@@ -9,10 +9,12 @@
 </head>
 <body>
 
+<div class='overlay'></div>
+
 <?php
 include 'config.php';
-$name=$age=$ph='';
-$nmerr=$agerr=$pherr='';
+$name=$age=$ph=$ins='';
+$nmerr=$agerr=$pherr=$inser='';
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $name=pp_pp($_POST['name']);
@@ -46,6 +48,16 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $ph=pp_pp($_POST['phone']);
     }
 
+    
+    $ins=pp_pp($_POST['insid']);
+    if(empty( $ins=pp_pp($_POST['insid']))){
+        $inser='enter your insurance id';
+    }
+
+    else{
+        $ins=pp_pp($_POST['insid']);
+    }
+
 }
 
 function pp_pp($data){
@@ -55,10 +67,10 @@ function pp_pp($data){
     return $data;
 }
 
-$sql=$conn->prepare('INSERT INTO patients(names,age,mobile) VALUES(?,?,?)');
+$sql=$conn->prepare('INSERT INTO patients(names,age,mobile,insid) VALUES(?,?,?,?)');
 
-$sql->bind_param("sis",$name,$age,$ph);
-if($name==''|| $age==''|| $ph==''){
+$sql->bind_param("siss",$name,$age,$ph,$ins);
+if($name==''|| $age==''|| $ph=='' || $ins==''){
     echo '';
 }
 
@@ -80,18 +92,22 @@ $conn->close();
 
 ?>
 
+<div class='fmmv'>
+
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method='post'>
 
 <input type="text" name='name' class="inpt" placeholder="enter your name"> <p class='err'><?php  echo $nmerr;?></p> <br>
 <input type="text" name='age' class="inpt" placeholder="enter your age">  <p class='err'><?php  echo $agerr;?></p> <br>
 <input type="text" name='phone' class="inpt" placeholder="enter your mobile"> <p class='err'><?php  echo $pherr;?></p><br>
-<br>
-
-<input type="submit" value='submit' class="sbmt"> <br> <br>
 
 
+<input type="text" class="inpt" placeholder="enter your insurance id" name="insid">  <p class='err'><?php  echo $inser;?></p> <br>
 
-<button class="sbmt"><a href='cl.php' class='sd'>STAFF LIST</a></button>
+<input type="submit" value='submit' class="sbmt"> <br> 
+
+
+
+<!-- <button class="sbt1"><a href='cl.php' class='sd'>STAFF LIST</a></button> -->
 
 
 
@@ -99,6 +115,9 @@ $conn->close();
 
 
 </form>
+
+
+</div>
 
 
 

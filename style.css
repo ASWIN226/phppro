@@ -14,14 +14,16 @@
    padding: 5px;
    border-radius: 20px;
    text-indent: 5px;
-   border: 2px solid red;
+   border: 2px solid black;
    margin: 20px;
-   background-color: red;
+   background-color: white;
    letter-spacing:5px;
    font-size: 13px;
    font-weight: bold;
-   color: white;
-   opacity: 0.5;
+  color: black;
+  
+   position: relative;
+
 
 
 }
@@ -35,7 +37,7 @@
     letter-spacing:5px;
   font-size: 13px;
   font-weight: bold;
-  color: white;
+color: black;
 
 
 }
@@ -49,10 +51,63 @@
   font-size: 15px;
   font-weight: bold;
   position: relative;
-  left: 80px;
+  left: 50px;
  color: white;
   background-color: red;
   opacity: 0.5;
   margin: 5px;
+
+}
+
+.sbt1{
+  padding: 10px 60px;
+  border-radius: 20px;
+  border: none;
+  outline: 2px solid red;
+  letter-spacing:5px;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+ color: white;
+  background-color: red;
+  opacity: 0.5;
+  margin: 5px;
+
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  opacity: 0.6;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 1720px 850px;
+}
+
+body{
+  background-image: url('panda.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 1800px 850px;
+  overflow: hidden;
+
+}
+
+.fmmv{
+  transform:translate(400px,50px);
+  height: 500px;
+  width: 800px;
+ background-color: black;
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0.5;
 
 }
