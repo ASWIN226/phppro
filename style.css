@@ -1,0 +1,58 @@
+.err{
+    color: red;
+    display: inline;
+}
+
+.sd{
+    text-decoration: none;
+   color: white;
+}
+
+.inpt{
+   height: 20px;
+   width: 300px;
+   padding: 5px;
+   border-radius: 20px;
+   text-indent: 5px;
+   border: 2px solid red;
+   margin: 20px;
+   background-color: red;
+   letter-spacing:5px;
+   font-size: 13px;
+   font-weight: bold;
+   color: white;
+   opacity: 0.5;
+
+
+}
+
+.inpt:focus{
+    outline: none;
+    
+}
+
+.inpt::placeholder{
+    letter-spacing:5px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+
+
+}
+
+.sbmt{
+  padding: 10px 60px;
+  border-radius: 20px;
+  border: none;
+  outline: 2px solid red;
+  letter-spacing:5px;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  left: 80px;
+ color: white;
+  background-color: red;
+  opacity: 0.5;
+  margin: 5px;
+
+}
