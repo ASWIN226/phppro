@@ -9,7 +9,7 @@
 }
 
 .inpt{
-   height: 20px;
+   height: 30px;
    width: 300px;
    padding: 5px;
    border-radius: 20px;
@@ -56,6 +56,8 @@ color: black;
   background-color: red;
   opacity: 0.5;
   margin: 5px;
+  float: left;
+
 
 }
 
@@ -68,11 +70,12 @@ color: black;
   font-size: 15px;
   font-weight: bold;
   position: relative;
-  left: 20px;
+  left: 50px;
  color: white;
   background-color: red;
   opacity: 0.5;
   margin: 5px;
+
 
 }
 
@@ -103,11 +106,39 @@ body{
 
 .fmmv{
   transform:translate(400px,50px);
-  height: 500px;
-  width: 800px;
+  height: 600px;
+  width: 900px;
  background-color: black;
   padding: 20px;
   border-radius: 20px;
   opacity: 0.5;
+  
 
+}
+
+.inpts{
+  height: 40px;
+  width: 300px;
+  padding: 5px;
+  border-radius: 20px;
+  
+  text-indent: 5px;
+  border: 2px solid black;
+  margin: 20px;
+  background-color: white;
+
+  letter-spacing:5px;
+  font-size: 13px;
+  font-weight: bold;
+ color: black;
+ 
+  position: relative;
+
+}
+
+.secdiv{
+display: flex;
+position: relative;
+top: -512px;
+transform: translate(450px,100px);
 }
