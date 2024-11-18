@@ -1,8 +1,10 @@
 .tbb{
    border-collapse: collapse;
-transform: translateX(300px);
-height: 40px;
-width: 700px;
+transform: translateX(-10px);
+/* height: 40px; */
+height: max-content;
+/* width: 900px; */
+width: max-content;
 background-color: rgb(0, 0, 0);
 border-color: rgb(255, 255, 255);
 color: white;
@@ -46,7 +48,7 @@ body{
 
 .btn{
   position: relative;
-  left: 450px;
+  left: 350px;
   top: 10px;
   width: 400px;
 

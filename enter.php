@@ -13,8 +13,8 @@
 
 <?php
 include 'config.php';
-$name=$age=$ph=$ins=$gen=$state='';
-$nmerr=$agerr=$pherr=$inser=$gener=$stterr='';
+$name=$age=$ph=$ins=$gen=$state=$email=$date='';
+$nmerr=$agerr=$pherr=$inser=$gener=$stterr=$emailer=$dterr='';
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $name=pp_pp($_POST['name']);
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
     $ph=pp_pp($_POST['phone']);
     if(empty( $ph=pp_pp($_POST['phone']))){
-        $pherr='enter your mobile number';
+        $pherr='enter your mobile';
     }
 
     else{
@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     
     $ins=pp_pp($_POST['insid']);
     if(empty( $ins=pp_pp($_POST['insid']))){
-        $inser='enter your insurance id';
+        $inser='insurance id';
     }
 
     else{
@@ -76,6 +76,27 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $state=pp_pp($_POST['state']);
     }
 
+      
+    $email=pp_pp($_POST['mail']);
+    if($email==''){
+        $emailer='enter mail';
+    }
+    else{
+        $email=pp_pp($_POST['mail']);
+    }
+
+       
+    $date=pp_pp($_POST['dt']);
+    if($date==''){
+        $dterr='enter date';
+    }
+    else{
+        $date=pp_pp($_POST['dt']);
+    }
+
+
+
+
 
 
 
@@ -88,10 +109,10 @@ function pp_pp($data){
     return $data;
 }
 
-$sql=$conn->prepare('INSERT INTO patients(names,age,mobile,insid,gender,states) VALUES(?,?,?,?,?,?)');
+$sql=$conn->prepare('INSERT INTO patients(names,age,mobile,insid,gender,states,email,dates) VALUES(?,?,?,?,?,?,?,?)');
 
-$sql->bind_param("sissss",$name,$age,$ph,$ins,$gen,$state);
-if($name==''|| $age==''|| $ph=='' || $ins=='' || $gen==''||$state==''){
+$sql->bind_param("sissssss",$name,$age,$ph,$ins,$gen,$state,$email,$date);
+if($name==''|| $age==''|| $ph=='' || $ins=='' || $gen==''||$state=='' || $email==''|| $date==''){
     echo '';
 }
 
@@ -113,12 +134,22 @@ $conn->close();
 
 ?>
 
+
+
 <div class='fmmv'>
+
+<div class="heading"><h1>PATIENT ENROLLMENT FORM</h1></div>
+
+
+
+
+
+
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method='post'>
 
 <input type="text" name='name' class="inpt" placeholder="enter your name"> <p class='err'><?php  echo $nmerr;?></p> <br>
-<input type="text" name='age' class="inpt" placeholder="enter your age">  <p class='err'><?php  echo $agerr;?></p> <br>
+<input type="text" name='age' class="inpt" placeholder="enter your age">  <p class='err' id="ager"><?php  echo $agerr;?></p>  <br>
 <input type="text" name='phone' class="inpt" placeholder="enter your mobile"> <p class='err'><?php  echo $pherr;?></p><br>
 
 
@@ -131,6 +162,13 @@ $conn->close();
 <option value="Transgender">Transgender</option>
 
 </select> <p class='err'><?php  echo $gener;?></p> <br> 
+<input type="submit" value='Enroll Now ' class="sbmt"> <br>
+<div class="bdv"><a href="cl.php">Patients List</a></div>
+
+</div> 
+
+
+
 
 
 <div class="secdiv">
@@ -175,12 +213,27 @@ $conn->close();
 <option value="Ladakh">Ladakh</option>
 
    
-</select> <p class='err'><?php  echo $stterr;?></p> 
+</select> <p class='err' id="ssia"><?php  echo $stterr;?></p> <br>
+
+<input type="email" name="mail" class="inpt" placeholder="enter your email"> <p class='err' id="ssia"><?php  echo $emailer;?></p> <br>
+
+
+<input type="text" placeholder="Date of enrollment" id="datepicker" class="inpt" name="dt"> <br>
+
+<input type="text" class="inpt"> <br>
+
+<input type="text" class="inpt">
+
+
+
+
+
+
 
 
 </div>
 
-<input type="submit" value='submit' class="sbmt"> 
+<!-- <input type="submit" value='submit' class="sbmt">  -->
 
 
 
@@ -194,10 +247,11 @@ $conn->close();
 </form>
 
 
-<button class="sbt1"><a href='cl.php' class='sd'>Patients List</a></button>
 
+<!-- 
+<div class="bdv"><a href="cl.php">click</a></div>
 
-</div>
+</div> -->
 
 
 
@@ -224,14 +278,22 @@ else{
 
 ?>
 
+<script>
+     document.getElementById("datepicker").addEventListener("focus", function () {
+    this.type = "date";
+  });
 
-
-
-
-<script src='script.js'>
-    
-
+  document.getElementById("datepicker").addEventListener("blur", function () {
+    if (!this.value) {
+      this.type = "text";
+    }
+  });
 </script>
+
+
+
+
+
 
 
 

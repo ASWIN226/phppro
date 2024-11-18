@@ -38,6 +38,8 @@ if($result->num_rows >0){
         echo " <th>Insurance Id</th>";
         echo " <th>Gender</th>";
         echo " <th>State</th>";
+        echo " <th>e-mail id</th>";
+        echo " <th>Enroll Date</th>";
         echo " <th>Action</th>";
         
 
@@ -70,6 +72,19 @@ if($result->num_rows >0){
         echo $row['states'].'<br>';
     
         echo '</td>';
+
+        
+        echo '<td>';
+        echo $row['email'].'<br>';
+    
+        echo '</td>';
+
+         
+        echo '<td>';
+        echo $row['dates'].'<br>';
+    
+        echo '</td>';
+
 
         echo '<td>';
         // Hidden input to send the ID of the row to be deleted

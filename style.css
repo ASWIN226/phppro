@@ -1,6 +1,6 @@
 .err{
     color: red;
-    display: inline;
+    display: inline-block;
 }
 
 .sd{
@@ -55,7 +55,7 @@ color: black;
  color: white;
   background-color: red;
   opacity: 0.5;
-  margin: 5px;
+ 
   float: left;
 
 
@@ -109,6 +109,7 @@ body{
   height: 600px;
   width: 900px;
  background-color: black;
+ color: white;
   padding: 20px;
   border-radius: 20px;
   opacity: 0.5;
@@ -137,8 +138,57 @@ body{
 }
 
 .secdiv{
-display: flex;
+
 position: relative;
-top: -512px;
-transform: translate(450px,100px);
+top: -590px;
+transform: translate(880px,100px);
+display: inline-block;
+opacity: 0.5;
+
 }
+
+.bdv{
+  padding: 10px 60px;
+  border-radius: 20px;
+  border: none;
+  outline: 2px solid red;
+  letter-spacing:5px;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  left: 240px;
+ color: white;
+  background-color: red;
+  opacity: 0.5;
+  margin: 5px;
+  width: 70px;
+  display: inline;
+  top: -10px;
+ 
+
+}
+
+.bdv a{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  
+}
+
+#ssia{
+  transform: translateY(10px);
+}
+
+#ml{
+  position: relative;
+  left: 400px;
+  display: inline;
+}
+
+.heading{
+  display: block;
+  text-align: center;
+
+}
+
+
