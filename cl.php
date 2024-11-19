@@ -40,6 +40,8 @@ if($result->num_rows >0){
         echo " <th>State</th>";
         echo " <th>e-mail id</th>";
         echo " <th>Enroll Date</th>";
+        echo " <th>Blood Group</th>";
+        echo " <th>Department for Consultation</th>";
         echo " <th>Action</th>";
         
 
@@ -84,6 +86,20 @@ if($result->num_rows >0){
         echo $row['dates'].'<br>';
     
         echo '</td>';
+
+          
+        echo '<td>';
+        echo $row['bloodgroup'].'<br>';
+    
+        echo '</td>';
+
+           
+        echo '<td>';
+        echo $row['department'].'<br>';
+    
+        echo '</td>';
+
+
 
 
         echo '<td>';

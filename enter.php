@@ -13,8 +13,8 @@
 
 <?php
 include 'config.php';
-$name=$age=$ph=$ins=$gen=$state=$email=$date='';
-$nmerr=$agerr=$pherr=$inser=$gener=$stterr=$emailer=$dterr='';
+$name=$age=$ph=$ins=$gen=$state=$email=$date=$blood=$dep='';
+$nmerr=$agerr=$pherr=$inser=$gener=$stterr=$emailer=$dterr=$bloer=$deper='';
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $name=pp_pp($_POST['name']);
@@ -94,6 +94,26 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $date=pp_pp($_POST['dt']);
     }
 
+       
+    $blood=pp_pp($_POST['blood']);
+    if($blood==''){
+        $bloer='choose bg';
+    }
+    else{
+        $blood=pp_pp($_POST['blood']);
+    }
+
+    $dep=pp_pp($_POST['department']);
+    if($dep==''){
+        $deper='choose dep';
+    }
+    else{
+        $dep=pp_pp($_POST['department']);
+    }
+
+
+
+
 
 
 
@@ -109,10 +129,10 @@ function pp_pp($data){
     return $data;
 }
 
-$sql=$conn->prepare('INSERT INTO patients(names,age,mobile,insid,gender,states,email,dates) VALUES(?,?,?,?,?,?,?,?)');
+$sql=$conn->prepare('INSERT INTO patients(names,age,mobile,insid,gender,states,email,dates,bloodgroup,department) VALUES(?,?,?,?,?,?,?,?,?,?)');
 
-$sql->bind_param("sissssss",$name,$age,$ph,$ins,$gen,$state,$email,$date);
-if($name==''|| $age==''|| $ph=='' || $ins=='' || $gen==''||$state=='' || $email==''|| $date==''){
+$sql->bind_param("sissssssss",$name,$age,$ph,$ins,$gen,$state,$email,$date,$blood,$dep);
+if($name==''|| $age==''|| $ph=='' || $ins=='' || $gen==''||$state=='' || $email==''|| $date=='' || $blood=='' || $dep==''){
     echo '';
 }
 
@@ -218,11 +238,97 @@ $conn->close();
 <input type="email" name="mail" class="inpt" placeholder="enter your email"> <p class='err' id="ssia"><?php  echo $emailer;?></p> <br>
 
 
-<input type="text" placeholder="Date of enrollment" id="datepicker" class="inpt" name="dt"> <br>
+<input type="text" placeholder="Date of enrollment" id="datepicker" class="inpt" name="dt"> <p class='err' id="ssia"><?php  echo $dterr;?></p><br>
 
-<input type="text" class="inpt"> <br>
+<select name="blood" id="bbx" class="inpts">
+    <option value="">Blood Group</option>
+    <option value="O-ve">O-ve</option>
+    <option value="A+ve">A+ve</option>
+    <option value="A-ve">A-ve</option>
+    <option value="B+ve">B+ve</option>
+    <option value="B-ve">B-ve</option>
+    <option value="AB+ve">AB+ve</option>
+    <option value="AB-ve">AB-ve</option>
+    <option value="Bombay Blood Group">Bombay Blood Group</option>
+    <option value="Rh-null">Rh-null</option>
+    <option value="hh (Bombay Phenotype)">hh (Bombay Phenotype)</option>
+    <option value="Lu(a+b-)">Lu(a+b-)</option>
+    <option value="Lu(a-b+)">Lu(a-b+)</option>
+    <option value="Kp(a+b-)">Kp(a+b-)</option>
+    <option value="Kp(a-b+)">Kp(a-b+)</option>
+    <option value="Js(a+b-)">Js(a+b-)</option>
+    <option value="Js(a-b+)">Js(a-b+)</option>
+    <option value="Diego Blood Group">Diego Blood Group</option>
+    <option value="Duffy Blood Group">Duffy Blood Group</option>
+    <option value="Kidd Blood Group">Kidd Blood Group</option>
+    <option value="MNS Blood Group">MNS Blood Group</option>
+    <option value="Colton Blood Group">Colton Blood Group</option>
+    <option value="Cartwright Blood Group">Cartwright Blood Group</option>
+    <option value="LW Blood Group">LW Blood Group</option>
+    <option value="Lutheran Blood Group">Lutheran Blood Group</option>
 
-<input type="text" class="inpt">
+   
+
+</select> <p class='err' id="ssia"><?php  echo $bloer;?></p><br> 
+<select name="department" id="department" class="inpts">
+    <option value="">Choose Department for Consultation</option>
+    <option value="Cardiology">Cardiology</option>
+    <option value="Dermatology">Dermatology</option>
+    <option value="Neurology">Neurology</option>
+    <option value="Orthopedics">Orthopedics</option>
+    <option value="Pediatrics">Pediatrics</option>
+    <option value="Gastroenterology">Gastroenterology</option>
+    <option value="Psychiatry">Psychiatry</option>
+    <option value="Radiology">Radiology</option>
+    <option value="Endocrinology">Endocrinology</option>
+    <option value="Oncology">Oncology</option>
+    <option value="Urology">Urology</option>
+    <option value="Nephrology">Nephrology</option>
+    <option value="ENT">ENT (Ear, Nose, Throat)</option>
+    <option value="Obstetrics & Gynecology">Obstetrics & Gynecology</option>
+    <option value="General Surgery">General Surgery</option>
+    <option value="Anesthesiology">Anesthesiology</option>
+    <option value="Emergency Medicine">Emergency Medicine</option>
+    <option value="Internal Medicine">Internal Medicine</option>
+    <option value="Rheumatology">Rheumatology</option>
+    <option value="Hematology">Hematology</option>
+    <option value="Allergy & Immunology">Allergy & Immunology</option>
+    <option value="Infectious Disease">Infectious Disease</option>
+    <option value="Plastic Surgery">Plastic Surgery</option>
+    <option value="Thoracic Surgery">Thoracic Surgery</option>
+    <option value="Vascular Surgery">Vascular Surgery</option>
+    <option value="Geriatrics">Geriatrics</option>
+    <option value="Palliative Care">Palliative Care</option>
+    <option value="Neonatology">Neonatology</option>
+    <option value="Hepatology">Hepatology</option>
+    <option value="Obstetrics">Obstetrics</option>
+    <option value="Gynecology">Gynecology</option>
+    <option value="Rehabilitation Medicine">Rehabilitation Medicine</option>
+    <option value="Sports Medicine">Sports Medicine</option>
+    <option value="Pathology">Pathology</option>
+    <option value="Forensic Medicine">Forensic Medicine</option>
+    <option value="Medical Genetics">Medical Genetics</option>
+    <option value="Dental">Dental</option>
+    <option value="Nutrition & Dietetics">Nutrition & Dietetics</option>
+    <option value="Speech Therapy">Speech Therapy</option>
+    <option value="Optometry">Optometry</option>
+    <option value="Audiology">Audiology</option>
+    <option value="Chiropractic">Chiropractic</option>
+    <option value="Ophthalmology">Ophthalmology</option>
+    <option value="Pharmacology">Pharmacology</option>
+    <option value="Microbiology">Microbiology</option>
+    <option value="Biochemistry">Biochemistry</option>
+    <option value="Bariatrics">Bariatrics</option>
+    <option value="Toxicology">Toxicology</option>
+    <option value="Gastrointestinal Surgery">Gastrointestinal Surgery</option>
+    <option value="Pediatric Surgery">Pediatric Surgery</option>
+    <option value="Cosmetic Surgery">Cosmetic Surgery</option>
+    <option value="Maxillofacial Surgery">Maxillofacial Surgery</option>
+    <option value="Hand Surgery">Hand Surgery</option>
+    <option value="Podiatry">Podiatry</option>
+    <option value="Wound Care">Wound Care</option>
+</select>  <p class='err' id="ssia"><?php  echo $deper;?></p> <br>
+
 
 
 
