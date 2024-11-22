@@ -24,8 +24,11 @@ include 'config.php';
 $sql='SELECT * FROM patients';
 $result=$conn->query($sql);
 
+
+
 if($result->num_rows >0){
     while($row=$result->fetch_assoc()){
+        echo '<div class="container">';
 
         echo '<form method="POST" action="delete.php" onsubmit="return confirm(\'Are you sure you want to delete?\')">';
 
@@ -42,7 +45,7 @@ if($result->num_rows >0){
         echo " <th>Enroll Date</th>";
         echo " <th>Blood Group</th>";
         echo " <th>Department for Consultation</th>";
-        echo " <th>Action</th>";
+        echo " <th colspan='2' class='act'>Action</th>";
         
 
         
@@ -112,12 +115,43 @@ if($result->num_rows >0){
         echo '</td>';
       
         echo '<br>';
+
+
+    //             echo '<td>';
+    //     // Hidden input to send the ID of the row to be edited
+    //     // echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+    //     echo '<a href="edit.php?id=' . $row['id'] . '"></a>'; // Edit Button
+    //    echo "<button>";
+
+    //     echo '<a href="edit.php?id=' . $row['id'] . '"></a>';
+    //     echo '<i class="fa-solid fa-pen-to-square"></i>';
+       
+       
+    //    echo "</button>";
+
+    //     echo '</td>';
+
+        echo '<td>';
+        echo '<input type="hidden" name="id" value=' .$row['id'] .'></input>';
+        //  echo '<button type=> <a href="edit.php?id='.$row['id'].'">Update</a>  </button>';
+
+        echo ' <a href="edit.php?id='.$row['id'].'" ><i class="fa-solid fa-pen-to-square fa-2xl" id="ed"></i></a>';
+
+
+
+        echo '</td>';
+
+
+
+
        
         echo '</tr>';
 
         echo '</table>';
 
         echo '</form>';
+
+        echo '</div>';
     }
 }
 else{

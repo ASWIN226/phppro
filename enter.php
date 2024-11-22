@@ -14,18 +14,35 @@
 <?php
 include 'config.php';
 $name=$age=$ph=$ins=$gen=$state=$email=$date=$blood=$dep='';
-$nmerr=$agerr=$pherr=$inser=$gener=$stterr=$emailer=$dterr=$bloer=$deper='';
+$nmerr=$agerr=$pherr=$inser=$gener=$stterr=$emailer=$dterr=$bloer=$deper=$alper='';
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $name=pp_pp($_POST['name']);
-    if(empty( $name=pp_pp($_POST['name']))){
-        $nmerr='enter your name ';
-    }
+      
+//    if(!preg_match("/^[a-zA-Z-']*$/",$name)){
+//     $alper="only letters allowed";
+// }
 
-    else{
-        $name=pp_pp($_POST['name']);
+   if($name==''){
+    $nmerr="enter name";
+   }
+   
+   
 
-    }
+   else{
+    $name=pp_pp($_POST['name']);
+
+   }
+
+ 
+   
+
+
+
+    // else{
+    //     $name=pp_pp($_POST['name']);
+
+    // }
 
     $age=pp_pp($_POST['age']);
 
@@ -168,7 +185,7 @@ $conn->close();
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method='post'>
 
-<input type="text" name='name' class="inpt" placeholder="enter your name"> <p class='err'><?php  echo $nmerr;?></p> <br>
+<input type="text" name='name' class="inpt" placeholder="enter your name"> <p class='err'><?php  echo $nmerr;?></p><p class='err'><?php  echo $alper;?></p> <br>
 <input type="text" name='age' class="inpt" placeholder="enter your age">  <p class='err' id="ager"><?php  echo $agerr;?></p>  <br>
 <input type="text" name='phone' class="inpt" placeholder="enter your mobile"> <p class='err'><?php  echo $pherr;?></p><br>
 
@@ -243,6 +260,7 @@ $conn->close();
 <select name="blood" id="bbx" class="inpts">
     <option value="">Blood Group</option>
     <option value="O-ve">O-ve</option>
+    <option value="O+ve">O+ve</option>
     <option value="A+ve">A+ve</option>
     <option value="A-ve">A-ve</option>
     <option value="B+ve">B+ve</option>
@@ -333,10 +351,6 @@ $conn->close();
 
 
 
-
-
-
-
 </div>
 
 <!-- <input type="submit" value='submit' class="sbmt">  -->
@@ -383,6 +397,8 @@ else{
 
 
 ?>
+
+
 
 <script>
      document.getElementById("datepicker").addEventListener("focus", function () {

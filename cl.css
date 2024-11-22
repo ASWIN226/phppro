@@ -43,6 +43,8 @@ body{
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 1800px 850px;
+  overflow-x: hidden;
+  overflow-y: scroll;
  
 }
 
@@ -52,6 +54,14 @@ body{
   top: 10px;
   width: 400px;
 
+}
+
+.act{
+  text-align: center;
+}
+
+#ed{
+  color: white;
 }
 
 
