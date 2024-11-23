@@ -45,7 +45,7 @@ if($result->num_rows >0){
         echo " <th>Enroll Date</th>";
         echo " <th>Blood Group</th>";
         echo " <th>Department for Consultation</th>";
-        echo " <th colspan='2' class='act'>Action</th>";
+        echo " <th colspan='3' class='act'>Action</th>";
         
 
         
@@ -139,6 +139,10 @@ if($result->num_rows >0){
 
 
 
+        echo '</td>';
+
+        echo '<td>';
+        echo '<a href="view.php?id=' . $row['id'] . '"><i class="fa-solid fa-eye fa-2xl" id="vw"></i></a>';
         echo '</td>';
 
 
