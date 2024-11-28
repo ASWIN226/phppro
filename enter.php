@@ -6,6 +6,10 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- fa -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -175,6 +179,7 @@ $conn->close();
 
 <div class='fmmv'>
 
+<a href="index.php" class="home"><i class="fa-solid fa-house fa-2xl"></i></a>
 <div class="heading"><h1>PATIENT ENROLLMENT FORM</h1></div>
 
 
@@ -399,6 +404,15 @@ else{
 ?>
 
 
+<div class="snow-container"></div>
+<div style="height: 200vh;">
+
+
+
+<script src="index.js"></script>
+
+
+
 
 <script>
      document.getElementById("datepicker").addEventListener("focus", function () {
@@ -411,6 +425,10 @@ else{
     }
   });
 </script>
+
+
+
+
 
 
 

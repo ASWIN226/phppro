@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="view.css">
+
+    
 </head>
 <body>
 
@@ -26,16 +28,54 @@ if (isset($_GET['id'])) {
         // Display the row data
         while ($row = $result->fetch_assoc()) {
             echo '<div id="dvv">';
+
+            echo "<span class='sp'>";
             echo "Name : " . $row['names'] . "<br>";
-            echo "AGE : " . $row['age'] . "<br>";
-            echo "MOBLE : " . $row['mobile'] . "<br>";
-            echo "INSURANCE ID : " . $row['insid'] . "<br>";
-            echo "GENDER : " . $row['gender'] . "<br>";
-            echo "STATES : " . $row['states'] . "<br>";
-            echo "EMAIL : " . $row['email'] . "<br>";
-            echo "ENROLLMENT DATE : " . $row['dates'] . "<br>";
-            echo "BLOOD GROUP : " . $row['bloodgroup'] . "<br>";
-            echo "DEPARTMENT FOR CONSULTATION : " . $row['department'] . "<br>";
+            echo "</span>";
+
+            echo "<span class='sp'>";
+            echo "Age : " . $row['age'] . "<br>";
+            echo "</span>";
+
+            echo "<span class='sp'>";
+            echo "Mobile : " . $row['mobile'] . "<br>";
+            echo "</span>";
+
+            echo "<span class='sp'>";
+            echo "Insurance Id : " . $row['insid'] . "<br>";
+            echo "</span>";
+
+
+            echo "<span class='sp'>";
+            echo "Gender : " . $row['gender'] . "<br>";
+            echo "</span>";
+
+            echo "<span class='sp'>";
+            echo "State : " . $row['states'] . "<br>";
+            echo "</span>";
+
+
+            echo "<span class='sp'>";
+            echo "Email : " . $row['email'] . "<br>";
+            echo "</span>";
+
+
+            echo "<span class='sp'>";
+            echo "Enrollment Date : " . $row['dates'] . "<br>";
+            echo "</span>";
+
+
+            echo "<span class='sp'>";
+            echo "Blood Group : " . $row['bloodgroup'] . "<br>";
+            echo "</span>";
+
+
+            echo "<span class='sp'>";
+            echo "Department for Consultation : " . $row['department'] . "<br>";
+            echo "</span>";
+
+
+            echo '<a href="cl.php" class="btn">PATIENTS LIST</a>';
             echo '</div>';
          
         }
@@ -46,6 +86,16 @@ if (isset($_GET['id'])) {
     echo "No ID provided.";
 }
 ?>
+
+
+
+<div class="snow-container"></div>
+<div style="height: 200vh;">
+
+
+
+<script src="index.js"></script>
+
 
     
 </body>

@@ -2,7 +2,7 @@
     height: 600px;
     width: 600px;
     padding: 50px;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 50px;
     background-color: black;
     color: white;
@@ -11,6 +11,9 @@
    border-radius: 20px;
    top: 20px;
    opacity: 0.7;
+ font-family: 'Times New Roman', Times, serif;
+   letter-spacing: 4px;
+   font-weight: bold;
   
 }
 
@@ -31,3 +34,85 @@ body{
     position: fixed;
     opacity: 0.5;
 }
+
+.btn{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    height: 90px;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    position: relative;
+    top: 20px;
+    opacity: 0.7;
+
+}
+
+.btn:hover{
+   background-color: green;
+   color: white;
+  
+}
+
+.sp{
+    background-color: yellow;
+    padding: 10px;
+    color: red;
+    border-radius: 20px;
+}
+
+
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes diagonal-fall {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.25;
+        transform: translate(10vw, 100vh);
+    }
+}
+
+
+
+
+

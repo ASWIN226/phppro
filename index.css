@@ -1,0 +1,213 @@
+.overlay{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+body{
+    background-image: url('doctor.jpg');
+    background-repeat: no-repeat;
+    background-size: 1600px 800px;
+    background-color: rgba(20, 20, 25, 1);
+   margin: 0;
+   padding: 0;
+    overflow: hidden;
+   width: 100vw;
+   height: auto;
+}
+
+.header{
+    height: 50px;
+    width: 250px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    transform: translate(200px,200px);
+    border-radius: 10px;
+    opacity: 0.6;
+    
+}
+
+.sec-hd{
+    transform: translate(200px,200px);
+    font-size: 35px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0.4;
+    text-align: center;
+    position: relative;
+    left: -190px;
+    
+}
+
+.adjust{
+    position: relative;
+    top: -50px;
+    
+}
+
+.points{
+    height: 00px;
+    width: 1200px;
+    padding: 20px;
+    transform: translate(180px,150px);
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: gray;
+}
+
+.homebtn{
+    padding: 20px;
+    height: 70px;
+    width: 300px;
+    border: none;
+  background-color: green;
+ border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    opacity: 0.5;
+    transform: translate(60px,40px);
+   
+}
+
+.homebtn:focus{
+    outline: none;
+}
+
+.homebtn a{
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    position: relative;
+    top: -20px;
+}
+
+#hmbt{
+    position: relative;
+    left: 250px;
+}
+
+.navbar{
+    height: 53px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+   background-color: green;
+   opacity: 0.6;
+   
+    z-index: 100;
+    
+   
+}
+
+.navbar ul{
+    display: flex;
+   
+    list-style: none;
+    position: relative;
+    position: relative;
+    left: -50px;
+    
+   
+}
+
+
+
+.navbar ul li a:hover{
+    color: white;
+    background-color: black;
+}
+
+a{
+  
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+
+  
+
+}
+
+.clock{
+    position: relative;
+    top: -10px;
+    left: 100px;
+   
+}
+
+.lic{
+    position: relative;
+    display: inline;
+    left: 850px;
+   
+}
+
+
+abbr {
+    font-weight: bold;
+    text-decoration: underline dotted;
+}
+
+
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes diagonal-fall {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.25;
+        transform: translate(10vw, 100vh);
+    }
+}
+
+
+
+
+

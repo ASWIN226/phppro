@@ -169,12 +169,24 @@ $conn->close()
 
 ?>
 
-<div class="container col-sm"> 
-<a href='enter.php' class='btn btn-warning p-2 '>Click to Add
+<div class="container col-sm" id="aas"> 
+<a href='enter.php' class='btn btn-warning p-2 m-5'>Click to Add
 </a>
 </div>
 
 </div>
+
+
+
+<div class="snow-container"></div>
+<div style="height: 200vh;">
+
+
+
+<script src="index.js"></script>
+
+
+
 
 
 

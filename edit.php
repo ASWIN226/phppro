@@ -53,8 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="overlay"></div>
+
+    <!-- <span class="samp">hello</span> -->
     <div class="main">
+
+
+   
     <form method="POST" action="edit.php">
+        <h1 class="tit"><?php   echo "Edit  Details   of"." ".$row['names']?></h1>
         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
         <input type="text" name="name" value="<?php echo $row['names']; ?>" class="inpt">
         <input type="number" name="age" value="<?php echo $row['age']; ?>" class="inpt"><br>
@@ -82,6 +88,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 
     </div>
+
+
+
+    
+<div class="snow-container"></div>
+<div style="height: 200vh;">
+
+
+
+<script src="index.js"></script>
+
    
 </body>
 </html>
